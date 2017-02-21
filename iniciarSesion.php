@@ -6,14 +6,15 @@ $fp = fopen("usuario.txt","r");
 while (!feof($fp))
 	{
 		$linea = fgets($fp);
-		$line = str_replace(' ', '', $line);
+		$linea = trim($linea);
 		echo $linea;
-		if (preg_match("/".$email."/i", $line))
+		if ($email== $linea)
 			{
 				$fc = fopen("claves.txt", "r");
 				while (!feof($fc))
 					{
 						$linea2 = fgets($fc);
+						$linea2 = trim($linea2);
 						echo $linea2." aqui estamos pirobo";
 							if ($linea2 == $clave)
 								{
